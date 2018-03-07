@@ -80,7 +80,10 @@ env.Append(CPPPATH=['.', godot_headers, 'include', 'include/core'])
 # Generate bindings
 json_api_file = os.path.join(os.getcwd(), 'godot_api.json')
 if os.path.exists(json_api_file) == False or ARGUMENTS.get('regenerate_bindings', 'no') == 'yes':
-    subprocess.call([os.path.expanduser(godot_bin_path), '--gdnative-generate-json-api', json_api_file])
+    #subprocess.call([os.path.expanduser(godot_bin_path), '--gdnative-generate-json-api', json_api_file])
+
+    subprocess.call(['C:\Users\elizeu\work\repo\github\godot\bin\godot.windows.tools.64.exe', '--gdnative-generate-json-api', json_api_file], shell=True)
+    
 
     # actually create the bindings here
     
